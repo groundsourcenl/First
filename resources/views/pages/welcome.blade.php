@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>First Post-Home jiko</title>
+    <title>First Post-Home</title>
   </head>
   <body>
                 <!--Ddefault Bootstrap Nav bar--> 
@@ -23,7 +23,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">First Post</a>
+                <a class="navbar-brand" href="/">First Post</a>
             </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,14 +56,14 @@
             <div class="col-md-12">
                 <div class="jumbotron">
                     <h1>Welcome to My Blog</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto enim consequatur, facilis perspiciatis porro ab ea quam repudiandae fuga quo, excepturi commodi assumenda, dolore nemo est maiores hic distinctio qui.</p>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto enim consequatur, facilis perspiciatis porro ab ea quam repudiandae fuga quo.</p>
                     <p><a class="btn btn-primary btn-lg" href="#" role="button">Popular Post</a></p>
                 </div>
             </div>
         </div> <!--End of header row-->
 
         <div class="row">
-            <div class="row  col-md-8">
+            <div class="col-md-8">
                 <div class="post">
                     <h3>Post Title</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam rerum, veritatis quae dolorum vitae enim? Maiores ad exercitationem odit doloribus cum facere pariatur ipsa eligendi sint nam. Vitae expedita, aperiam.</p>
@@ -101,6 +101,7 @@
             </div>
         </div>
     </div>  <!--End of Container-->
+
 
 
     <!-- Optional JavaScript -->
