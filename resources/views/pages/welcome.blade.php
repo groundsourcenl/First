@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>First Post-Home</title>
+    <title>First Post-Home jiko</title>
   </head>
   <body>
                 <!--Ddefault Bootstrap Nav bar--> 
