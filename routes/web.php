@@ -11,7 +11,11 @@
 |
 */
 Route::get('contact', 'PagesController@getcontact');
+Route::post('contact', 'PagesController@postcontact');
 
 Route::get('about', 'PagesController@getabout');
 
 Route::get('/', 'PagesController@getindex');
+
+Route::get('create', 'PostController@getcreate');
+Route::post('create', 'PostController@postcreate');
