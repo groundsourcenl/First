@@ -19,3 +19,5 @@ Route::get('/', 'PagesController@getindex');
 
 Route::get('create', 'PostController@getcreate');
 Route::post('create', 'PostController@postcreate');
+
+Route::get('index', 'PostController@getindex');

@@ -28,6 +28,8 @@ Class PagesController extends Controller{
 
 	}
 	public function postcontact(){
+
+		//USING INPUT (CHECK POSTCONTROLLER FOR $REQUEST)
  
         $anything = new Contact;
         $anything->email/* this (name)ie email represents migration column name*/ = Input::get('email'); // this (name)ie email, is taken from the form-input name
