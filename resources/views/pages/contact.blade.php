@@ -7,26 +7,49 @@
             <div class="col-md-6 col-md-offset-3" >
                 <h1>Contact Me</h1>
                 <hr>
-                <form method="POST" action="{{url('contact')}}" autocomplete="off">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <div class="form-group">
-                        <label for="email">Email:</label> <br>
-                        <input type="email" id="email" name="email" class="form-control"> 
-                    </div>
+                @if (Session::has('success'))
 
-                    <div class="form-group">
-                        <label for="subject">Subject:</label> <br>
-                        <input type="subject" id="subject" name="subject" class="form-control"> 
-                    </div>
+                <div class="alert alert-success" role="alert">
+                    
+                    <strong>Succesful Thank you!!</strong> {{Session::get('success')}}
+                </div>
+            @endif
 
-                    <div class="form-group">
-                        <label for="message">Message:</label> <br>
-                        <textarea name="message" id="message" placeholder="Type your message here" class="form-control"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-success form-control" value="Submit">
-                    </div>
-                </form>
+            
+            @if(count($errors))
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.
+                <br/>
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
+
+                
+            <form method="POST" action="{{url('contact')}}" autocomplete="off">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="form-group">
+                    <label for="email">Email:</label> <br>
+                    <input type="email" id="email" name="email" class="form-control"> 
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject:</label> <br>
+                    <input type="subject" id="subject" name="subject" class="form-control"> 
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label> <br>
+                    <textarea name="message" id="message" placeholder="Type your message here" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success form-control" value="Submit">
+                </div>
+            </form>
             </div>
         </div>
 @endsection

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Contact;
-use Illuminate\Support\Facades\Input;
+//use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 Class PagesController extends Controller{
 
@@ -27,20 +29,47 @@ Class PagesController extends Controller{
 		return view('pages.contact');
 
 	}
-	public function postcontact(){
+	public function postcontact(Request $request){
 
-		//USING INPUT (CHECK POSTCONTROLLER FOR $REQUEST)
+		//USING INPUT (CHECK POSTCONTROLLER FOR $REQUEST) coment out use Illuminate\Support\Facades\Input; if not using input method
  
+		// validation
+
+		$this->validate($request,[
+                'email' => 'required',
+                'subject' => 'required|min:5|max:35',
+                'message' => 'required',
+                                
+            ]);
+
+		//Inserting data into DB with $request
+
+		$anything = new Contact;
+		$anything->email= $request->email;
+        $anything->subject= $request->subject;        
+        $anything->message= $request->message;
+       
+
+        /*
+
+			If validation uses $request then the Inserting into DB also recomendated use $request and not Input method
         $anything = new Contact;
-        $anything->email/* this (name)ie email represents migration column name*/ = Input::get('email'); // this (name)ie email, is taken from the form-input name
-        $anything->subject=  Input::get('subject');        
-        $anything->message=  Input::get('message');
-       
-       
+        $anything->email= Input::get('email');
+        $anything->subject=  Input::get('subject');       
+        $anything->message=  Input::get('message');*/
+              
         $anything->save();
-		return view('pages.about');
+
+        Session::flash('success',' Your Command Successful');
+
+		return view('pages.contact');
+
 	}
 
+	public function getshow_contact_inserted(){
+		$show_contact_inserted_list = Contact::all();
+		return view('pages.show_contact_inserted', compact('show_contact_inserted_list'));
+	} 
 	
 }
 

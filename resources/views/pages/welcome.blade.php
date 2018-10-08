@@ -19,6 +19,7 @@
                 <h3>Post Title</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam rerum, veritatis quae dolorum vitae enim? Maiores ad exercitationem odit doloribus cum facere pariatur ipsa eligendi sint nam. Vitae expedita, aperiam.</p>
                 <a href="#" class="btn btn-primary">Read More</a>
+                
             </div>
 
             <hr>

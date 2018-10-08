@@ -5,7 +5,6 @@ use App\Post;
 //use DB;
 //use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
-
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -17,8 +16,8 @@ class PostController extends Controller
 
     public function postcreate(Request $request){
         
-        //if 
-        //using input class then there will be empty  in function postcreate arguement()
+        //if using input class then there will be empty  in function postcreate arguement()
+        
         //$createpost = new Post;
         //$createpost->post_title/* this (name)ie email represents migration column name*/ = Input::get('post_title'); // this (name)ie email, is taken from the form-input name
        // $createpost->subject=  Input::get('subject');        
@@ -29,7 +28,7 @@ class PostController extends Controller
         //$createpost->save();
 
         $this->validate($request,[
-                'post_title' => 'required|min:5|max:35',
+                'post_title' => 'required',
                 'subject' => 'required|min:5|max:35',
                 'article' => 'required',
                 'author' => 'required',
@@ -50,7 +49,9 @@ class PostController extends Controller
         Session::flash('success',' Form successfully Submitted');
 
 
-        /*$data = array(
+        /* insert using $request class but WITHOUT using MODEL
+
+        $data = array(
                 'post_title'   => $request->input ('post_title'),
                 'subject'    => $request->input ('subject'),
                 'article' => $request->input ('article'),

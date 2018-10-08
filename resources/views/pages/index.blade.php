@@ -8,15 +8,15 @@
         <div class="col-md-12">
             <h1>Index</h1>
 
-            <table style="width:100%" border="1">
-				  <tr>
+            <table class=" table table-bordered table-hover">
+				  <tr class="info">
 				  	<th>Id</th>
 				    <th>Post</th>
 				    <th>Subject</th>
 				    <th>Article</th>
 				    <th>Author</th>
-				    <th>Article Email</th>
-				    <th>Create</th>
+				    <th>Arthor Email</th>
+				    <th>Created</th>
 				    <th>Updated</th>
 
 				  </tr>
