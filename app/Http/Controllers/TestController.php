@@ -17,6 +17,8 @@ class TestController extends Controller
     {
         $test_index_list = Test::all();
 
+        //return view('test.index', compact('test_index_list'));
+
         return view('test.index', compact('test_index_list'));
     }
 
@@ -51,10 +53,10 @@ class TestController extends Controller
         
         $testpost->save();
 
-        Session::flash('success',' Form successfully Submitted');
-        return view ('test.create');
-    }
+        Session::flash('success',' Test Post submitted Sucessfully!!');
 
+        return redirect()->route('test.show', $testpost->id);
+    }
     /**
      * Display the specified resource.
      *
@@ -63,7 +65,18 @@ class TestController extends Controller
      */
     public function show($id)
     {
-        //
+        $kilam = Test::find($id);
+    
+                        //PASSING DATA TO VIEW
+
+        return view('test.show', compact('kilam')); //EASIEST USE THIS METHOD FOR PASSING DATA if you dont want to CHANGE the variable name which is to be access IN the view page Eg. here test.show page.
+
+                        //OR
+
+        //return view('test.show')->withTestshow($kilam);
+        //return view('test.show')->with('testshow',$kilam);
+
+
     }
 
     /**

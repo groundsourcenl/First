@@ -46,7 +46,7 @@ class PostController extends Controller
 
         $createpost->save();
 
-        Session::flash('success',' Form successfully Submitted');
+        Session::flash('success',' Post successfully Submitted');
 
 
         /* insert using $request class but WITHOUT using MODEL

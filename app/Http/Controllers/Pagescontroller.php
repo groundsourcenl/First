@@ -60,7 +60,7 @@ Class PagesController extends Controller{
               
         $anything->save();
 
-        Session::flash('success',' Your Command Successful');
+        Session::flash('success',' Your Contact Successfully saved');
 
 		return view('pages.contact');
 
