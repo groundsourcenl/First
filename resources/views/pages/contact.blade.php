@@ -7,29 +7,7 @@
             <div class="col-md-6 col-md-offset-3" >
                 <h1>Contact Me</h1>
                 <hr>
-                @if (Session::has('success'))
-
-                <div class="alert alert-success" role="alert">
-                    
-                    <strong>Succesful Thank you!!</strong> {{Session::get('success')}}
-                </div>
-            @endif
-
-            
-            @if(count($errors))
-            <div class="alert alert-danger">
-                <strong>Whoops!</strong> There were some problems with your input.
-                <br/>
-                <ul>
-                    @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
-
-
-                
+                                
             <form method="POST" action="{{url('contact')}}" autocomplete="off">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group">
