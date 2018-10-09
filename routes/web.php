@@ -27,7 +27,5 @@ Route::post('create', 'PostController@postcreate');
 
 Route::get('index', 'PostController@getindex');
 
-//Created multiple Routes for Blogpost
-//Route::resource('blogposts', 'BlogController');
-
-Route::get('create', 'TestController@getcreate');
+//Created multiple Routes for TestController
+Route::resource('test', 'TestController');

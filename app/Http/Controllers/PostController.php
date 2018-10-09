@@ -30,7 +30,7 @@ class PostController extends Controller
         $this->validate($request,[
                 'post_title' => 'required',
                 'subject' => 'required|min:5|max:35',
-                'article' => 'required',
+                'article' => 'required|min:5|max:700',
                 'author' => 'required',
                 'author_email' => 'required|email',
                 
