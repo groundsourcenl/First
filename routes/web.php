@@ -11,7 +11,7 @@
 |
 */
 //Home
-Route::get('/', 'PagesController@getindex');
+Route::get('/', 'PagesController@getwelcome');
 
 //Contact
 Route::get('contact', 'PagesController@getcontact');

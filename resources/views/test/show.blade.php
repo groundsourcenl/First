@@ -11,8 +11,8 @@
 
 			<!--OR-->
 
-		<!-- $testshow->post_title
-			$testshow->article -->
+		<!-- 	$testshow->post_title-->
+		<!--	$testshow->article -->
 		</div>
 
 		<div class="col-md-4">
@@ -33,7 +33,10 @@
 					<div class="col-sm-6">
 						<a href="{{route('test.destroy', [$kilam->id]) }}" class="btn btn-danger btn-block">Delete</a>
 					</div>
-				</div> 	
+				</div>
+				<div class="row">
+					<a href="{{ route('test.index', [$kilam])}}" class="btn btn-primary btn-block text-center"> << Show all Post</a>
+				</div>	
 			</div>
 
 			

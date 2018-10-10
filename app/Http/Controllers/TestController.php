@@ -15,11 +15,11 @@ class TestController extends Controller
      */
     public function index()
     {
-        $test_index_list = Test::all();
+        $test_index = Test::all();
 
-        //return view('test.index', compact('test_index_list'));
+        //return view('test.index', compact('test_index'));
 
-        return view('test.index', compact('test_index_list'));
+        return view('test.index', compact('test_index')); // Why in URL typing only test open's up test.index??
     }
 
     /**
@@ -69,14 +69,16 @@ class TestController extends Controller
     
                         //PASSING DATA TO VIEW
 
-        return view('test.show', compact('kilam')); //EASIEST USE THIS METHOD FOR PASSING DATA. The same $kilam will be passed/accessed in View page. Here ('test.show')
+        return view('test.show', compact('kilam')); //EASIEST USE THIS METHOD FOR PASSING 
+        //DATA. The same $kilam will be passed/accessed in View page ie, ('test.show')
 
                         //OR
 
         //return view('test.show')->withTestshow($kilam);
         //return view('test.show')->with('testshow',$kilam);
 
-        //Note: if you want to CHANGE the variable name which is to be access IN the view page (Eg. here test.show page) 
+        //Note: if you want to CHANGE the variable name which is to be access IN the 
+        //view page (Eg. here test.show page) the variable name passed to view page is $testshow. 
  
 
     }

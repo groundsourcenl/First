@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 Class PagesController extends Controller{
 
-	public function getindex(){
+	public function getwelcome(){
 
 		return view('pages.welcome');
 	} 
