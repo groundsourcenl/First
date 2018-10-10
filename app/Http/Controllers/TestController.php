@@ -69,13 +69,15 @@ class TestController extends Controller
     
                         //PASSING DATA TO VIEW
 
-        return view('test.show', compact('kilam')); //EASIEST USE THIS METHOD FOR PASSING DATA if you dont want to CHANGE the variable name which is to be access IN the view page Eg. here test.show page.
+        return view('test.show', compact('kilam')); //EASIEST USE THIS METHOD FOR PASSING DATA. The same $kilam will be passed/accessed in View page. Here ('test.show')
 
                         //OR
 
         //return view('test.show')->withTestshow($kilam);
         //return view('test.show')->with('testshow',$kilam);
 
+        //Note: if you want to CHANGE the variable name which is to be access IN the view page (Eg. here test.show page) 
+ 
 
     }
 
