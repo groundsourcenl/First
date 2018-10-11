@@ -133,11 +133,9 @@ class TestController extends Controller
      */
     public function destroy($id)
     {
-        Test::find($id)->delete();
+        $madan = Test::find($id);
+        $madan->delete();
+        return redirect()->route('test.index');
        
-
-        Session::flash('delete_message', 'Post successfully deleted!');
-
-        return redirect()->route('index');
     }
 }
