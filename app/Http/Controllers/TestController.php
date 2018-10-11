@@ -42,7 +42,7 @@ class TestController extends Controller
     {
         $this->validate($request,[
                 'post_title' => 'required',
-                'article' => 'required|min:5|max:700',
+                'article' => 'required|min:5',
                                
             ]);
 
@@ -69,8 +69,9 @@ class TestController extends Controller
     
                         //PASSING DATA TO VIEW
 
-        return view('test.show', compact('kilam')); //EASIEST USE THIS METHOD FOR PASSING 
-        //DATA. The same $kilam will be passed/accessed in View page ie, ('test.show')
+        return view('test.show', compact('kilam')); 
+        //Above is the EASIEST USE THIS METHOD FOR PASSING DATA. The same
+        // $kilam will be passed/accessed in View page ie, ('test.show') as $kilam.
 
                         //OR
 
@@ -91,7 +92,10 @@ class TestController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sinsin =Test::find($id);
+        return view('test.testedit', compact('sinsin'));
+
+        //here the ('test.testedit') is using URL so, the testedit should name match the view page testedit
     }
 
     /**
@@ -103,7 +107,22 @@ class TestController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $this->validate($request,[
+                'post_title' => 'required',
+                'article' => 'required|min:5|max:700',
+                               
+            ]);
+
+
+        $testpost = Test::find($id);
+        $testpost->post_title= $request->post_title;
+        $testpost->article= $request->article;
+        
+        $testpost->save();
+
+        Session::flash('success',' Test Post submitted Sucessfully!!');
+
+        return redirect()->route('test.show', $testpost->id);
     }
 
     /**
@@ -114,6 +133,11 @@ class TestController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Test::find($id)->delete();
+       
+
+        Session::flash('delete_message', 'Post successfully deleted!');
+
+        return redirect()->route('index');
     }
 }
