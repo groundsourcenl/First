@@ -16,7 +16,7 @@ Route::get('/', 'PagesController@getwelcome');
 //Contact
 Route::get('contact', 'PagesController@getcontact');
 Route::post('contact', 'PagesController@postcontact');
-Route::get('show_contact_inserted', 'PagesController@getshow_contact_inserted');
+Route::get('all_contact', 'PagesController@getall_contact');
 
 //About
 Route::get('about', 'PagesController@getabout');

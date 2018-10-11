@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Contact;
-//use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -66,9 +66,9 @@ Class PagesController extends Controller{
 
 	}
 
-	public function getshow_contact_inserted(){
+	public function getall_contact(){
 		$show_contact_inserted_list = Contact::all();
-		return view('pages.show_contact_inserted', compact('show_contact_inserted_list'));
+		return view('pages.all_contact', compact('show_contact_inserted_list'));
 	} 
 	
 }

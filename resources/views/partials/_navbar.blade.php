@@ -14,9 +14,16 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>  
+                <li class="{{Request::is('/') ? "active" : ""}}"><a href="/">Home</a></li>
+                <li class="{{Request::is('about') ? "active" : ""}}"><a href="/about">About</a></li>
+                <li class="{{Request::is('contact') ? "active" : ""}}"><a href="/contact">Contact</a></li>
+                <li class="{{Request::is('all_contact') ? "active" : ""}}"><a href="/all_contact">All Contacts</a></li>
+                <li class="{{Request::is('create') ? "active" : ""}}"><a href="/create">Create Post</a></li>
+                <li class="{{Request::is('index') ? "active" : ""}}"><a href="/index">All Post</a></li>
+                <li class="{{Request::is('test.create') ? "active" : ""}}"><a href="{{ route('test.create') }}">Test Create</a></li>
+                <li class="{{Request::is('test.index') ? "active" : ""}}"><a href="{{ route('test.index') }}">All test post</a></li>
+
+                <li class="{{Request::is() ? "active" : ""}}"><a href="#"></a></li>
             </ul>
        
         <ul class="nav navbar-nav navbar-right">
